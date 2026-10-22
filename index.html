@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <title>FF Likes | تبادل اللايكات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="flame">🔥</span> FF Likes</a>
+    <nav><a href="#home">الرئيسية</a><a href="#exchange">تبادل اللايكات</a><a href="#requests">الطلبات</a></nav>
+    <a class="small-btn" href="#exchange">ابدأ الآن</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">مجتمع اللاعبين</p>
+        <h1>تبادل اللايكات<br><span>بين لاعبي Free Fire</span></h1>
+        <p class="lead">شارك في المجتمع، ساعد لاعبين آخرين، وتابع طلباتك من مكان واحد.</p>
+        <a class="primary-btn" href="#exchange">إنشاء طلب تجريبي <span>➜</span></a>
+        <p class="notice">نسخة تجريبية: لا ترسل لايكات داخل اللعبة تلقائياً.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="ring"></div><div class="big-flame">🔥</div><div class="floating-card"><span>👍</span><b>مجتمع اللايكات</b><small>تبادل • تعاون • احترام</small></div></div>
+    </section>
+
+    <section class="stats">
+      <div><b id="countRequests">0</b><span>طلبات على هذا الجهاز</span></div>
+      <div><b>24/7</b><span>واجهة متاحة محلياً</span></div>
+      <div><b>0</b><span>كلمات مرور مطلوبة</span></div>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel" id="exchange">
+        <div class="section-heading"><div><p class="eyebrow">ابدأ المشاركة</p><h2>إنشاء طلب تبادل</h2></div><span class="icon-badge">↗</span></div>
+        <p class="muted">أدخل Player ID وعدد اللايكات التي تريد طلبها. تُحفظ الطلبات في متصفحك فقط في هذه النسخة.</p>
+        <form id="requestForm">
+          <label for="playerId">Player ID</label>
+          <input id="playerId" name="playerId" inputmode="numeric" pattern="[0-9]{5,20}" minlength="5" maxlength="20" placeholder="مثال: 1234567890" required>
+          <div class="form-row">
+            <div><label for="likes">عدد اللايكات المطلوبة</label><select id="likes"><option value="10">10 لايكات</option><option value="25">25 لايك</option><option value="50">50 لايك</option><option value="100">100 لايك</option></select></div>
+            <div><label for="offer">مقابل التبادل</label><select id="offer"><option value="10">10 لايكات مني</option><option value="25">25 لايك مني</option><option value="50">50 لايك مني</option></select></div>
+          </div>
+          <label class="check"><input id="consent" type="checkbox" required> أوافق على مشاركة Player ID فقط، وأفهم أن هذا الطلب تجريبي.</label>
+          <button class="primary-btn full" type="submit">حفظ الطلب على هذا الجهاز <span>↗</span></button>
+          <p id="formMessage" class="form-message" role="status"></p>
+        </form>
+      </section>
+
+      <aside class="panel profile-panel">
+        <div class="section-heading"><div><p class="eyebrow">لوحة المتابعة</p><h2>حساب اللاعب</h2></div><span class="icon-badge">◎</span></div>
+        <div class="profile-avatar">🎮</div>
+        <p class="muted center">ما ثماش تسجيل دخول مطلوب</p>
+        <div class="profile-stat"><span>طلباتك المحفوظة</span><b id="profileRequests">0</b></div>
+        <div class="profile-stat"><span>حالة الموقع</span><b class="green">تجريبي</b></div>
+        <div class="safe-note"><span>🛡️</span><p>ما تدخلش كلمة سر Free Fire أو رمز التحقق في أي موقع لتبادل اللايكات.</p></div>
+      </aside>
+    </section>
+
+    <section class="panel requests-panel" id="requests">
+      <div class="section-heading"><div><p class="eyebrow">محفوظ محلياً</p><h2>آخر الطلبات</h2></div><button class="ghost-btn" id="clearRequests" type="button">مسح الطلبات</button></div>
+      <div class="table-wrap">
+        <table><thead><tr><th>Player ID</th><th>مطلوب</th><th>مقابل</th><th>الحالة</th><th>التاريخ</th></tr></thead><tbody id="requestsBody"><tr class="empty"><td colspan="5">ما عندك حتى طلب توّا. جرّب أنشئ طلب من الفورم.</td></tr></tbody></table>
+      </div>
+    </section>
+
+    <section class="how">
+      <div><span class="step">01</span><h3>أدخل الـ ID</h3><p>استعمل Player ID فقط، من غير كلمة سر.</p></div>
+      <div><span class="step">02</span><h3>حدّد التبادل</h3><p>اختار العدد اللي تطلبه والعدد اللي تعرضه.</p></div>
+      <div><span class="step">03</span><h3>تابع الطلب</h3><p>النسخة الحالية تحفظ الطلبات في نفس المتصفح.</p></div>
+    </section>
+  </main>
+
+  <footer><span>🔥 FF Likes</span><p>مشروع مستقل وغير تابع لـ Garena أو Free Fire.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
